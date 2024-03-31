@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Connection = () => {
 	const handleLogout = () => {
 		localStorage.removeItem("token");
-		window.location = "/Login";
+		window.location.reload();
 	};
 
 	const user = localStorage.getItem("token");
