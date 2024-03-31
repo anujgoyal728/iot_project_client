@@ -17,7 +17,7 @@ const Login = () => {
 			const url = "https://iot-project-server.onrender.com/api/auth";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
-			window.location = "/";
+			window.location = "/iot_project_client/";
 		} catch (error) {
 			if (
 				error.response &&
@@ -61,7 +61,7 @@ const Login = () => {
 				</div>
 				<div className="right">
 					<h1>New Here ?</h1>
-					<Link to="/signup">
+					<Link to="/iot_project_client/signup">
 						<button type="button" className="white_btn">
 							Sign Up
 						</button>

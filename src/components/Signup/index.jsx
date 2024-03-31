@@ -44,7 +44,7 @@ const Signup = () => {
 			<div className="signup_form_container">
 				<div className="left_signup">
 					<h1>Welcome Back</h1>
-					<Link to="/login">
+					<Link to="/iot_project_client/login">
 						<button type="button" className="white_btn">
 							Sign in
 						</button>

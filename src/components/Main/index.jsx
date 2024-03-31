@@ -78,7 +78,7 @@ const Main = () => {
 					<hr/>
 					<Row>
 						<Col sm={4} className="row_title">My Connections:</Col>
-						<Col sm={8}><Link to={'/connections'}>Click Here to see people you interacted with.</Link></Col>
+						<Col sm={8}><Link to={'/iot_project_client/connections'}>Click Here to see people you interacted with.</Link></Col>
 					</Row>
 					<hr/>
 				</Container>
