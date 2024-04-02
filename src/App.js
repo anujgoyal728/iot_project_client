@@ -9,11 +9,11 @@ function App() {
 
 	return (
 		<Routes>
-			{user && <Route path="/iot_project_client/" exact element={<Main />} />}
-			<Route path="/iot_project_client/signup" exact element={<Signup />} />
-			<Route path="/iot_project_client/login" exact element={<Login />} />
-			<Route path="/iot_project_client/" element={<Navigate replace to="/iot_project_client/login" />} />
-			<Route path="/iot_project_client/connections" exact element={<Connection />}/>
+			{user && <Route path="/" exact element={<Main />} />}
+			<Route path="/signup" exact element={<Signup />} />
+			<Route path="/login" exact element={<Login />} />
+			<Route path="/" element={<Navigate replace to="/login" />} />
+			<Route path="/connections" exact element={<Connection />}/>
 		</Routes>
 	);
 }

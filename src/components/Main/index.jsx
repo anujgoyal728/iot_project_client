@@ -58,7 +58,7 @@ const Main = () => {
 					<hr/>
 					<Row>
 						<Col sm={4} className="row_title">LinkedIn Link:</Col>
-						<Col sm={8}>{data.linkedIn}</Col>
+						<Col sm={8}><a href={data.linkedIn} target="_blank">{data.linkedIn}</a></Col>
 					</Row>
 					<hr/>
 					<Row>
@@ -68,7 +68,7 @@ const Main = () => {
 					<hr/>
 					<Row>
 						<Col sm={4} className="row_title">Resume Link:</Col>
-						<Col sm={8}>{data.resume}</Col>
+						<Col sm={8}><Link to={data.resume} target="_blank">{data.resume}</Link></Col>
 					</Row>
 					<hr/>
 					<Row>
@@ -78,7 +78,7 @@ const Main = () => {
 					<hr/>
 					<Row>
 						<Col sm={4} className="row_title">My Connections:</Col>
-						<Col sm={8}><Link to={'/iot_project_client/connections'}>Click Here to see people you interacted with.</Link></Col>
+						<Col sm={8}><Link to={'/connections'}>Click Here to see people you interacted with.</Link></Col>
 					</Row>
 					<hr/>
 				</Container>
