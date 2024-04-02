@@ -70,6 +70,8 @@ const Signup = () => {
 							value={data.phoneNo}
 							required
 							className="input"
+							minLength={10}
+							maxLength={10}
 						/>
 						<input
 							type="email"
@@ -100,7 +102,7 @@ const Signup = () => {
 						/>
 						<input
 							type="text"
-							placeholder="Bio"
+							placeholder="Bio in less than 100 characters."
 							name="Bio"
 							onChange={handleChange}
 							value={data.Bio}
@@ -117,13 +119,15 @@ const Signup = () => {
 							className="input"
 						/>
 						<input
-							type="text"
-							placeholder="User ID"
+							type="Number"
+							placeholder="8 digit User ID"
 							name="user_id"
 							onChange={handleChange}
 							value={data.user_id}
 							required
 							className="input"
+							minLength={8}
+							maxLength={8}
 						/>
 						{error && <div className="error_msg">{error}</div>}
 						<button type="submit" className="green_btn">
