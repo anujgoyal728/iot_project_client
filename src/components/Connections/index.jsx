@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link, useNavigate } from "react-router-dom";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const Connection = () => {
+    
+    const navigate = useNavigate();
 	const handleLogout = () => {
 		localStorage.removeItem("token");
-		window.location.reload();
+		navigate("/login");
 	};
 
 	const user = localStorage.getItem("token");
@@ -73,6 +77,8 @@ const Connection = () => {
             <div>
                 {connections.map(connection => (
                     <Container className="box">
+                        <img width={200} height={200} src={connection.image}/>
+					    <hr/>
                         <Row>
                             <Col sm={4} className="row_title">Name:</Col>
                             <Col sm={8}>{connection.name}</Col>
