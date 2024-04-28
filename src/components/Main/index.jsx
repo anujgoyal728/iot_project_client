@@ -23,7 +23,6 @@ const Main = () => {
 		})
 		.then(response => {
 			setData(response.data);
-			console.log(data);
 		})
 		.catch(error => {
 			console.error('Error fetching data:', error);
@@ -41,6 +40,8 @@ const Main = () => {
 			</nav>
 			<div>
 				<Container className="box">
+					<img width={200} height={200} src={data.image}/>
+					<hr/>
 					<Row>
 						<Col sm={4} className="row_title">Name:</Col>
 						<Col sm={8}>{data.name}</Col>
