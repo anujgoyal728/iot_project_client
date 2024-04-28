@@ -40,3 +40,12 @@
 .col-sm-8{
 	text-align: center;
 }
+
+
+img{
+	text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
