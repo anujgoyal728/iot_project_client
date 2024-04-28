@@ -12,7 +12,8 @@ const Signup = () => {
 		password: "",
 		Bio: "",
 		resume: "", 
-		user_id: ""
+		user_id: "",
+		image: ""
 	});
 	const [error, setError] = useState("");
 	const navigate = useNavigate();
@@ -20,6 +21,22 @@ const Signup = () => {
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
+
+	function convertToBase64(e){
+		console.log(e);
+		var reader = new FileReader();
+		reader.readAsDataURL(e.target.files[0]);
+		reader.onload = () => {
+			console.log(reader.result);
+			setData({
+				...data,
+				image: reader.result
+			})
+		}
+		reader.onerror = error => {
+			console.log("Error: ", error);
+		}
+	}
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -128,6 +145,13 @@ const Signup = () => {
 							className="input"
 							minLength={8}
 							maxLength={8}
+						/>
+						<input
+							accept="image/*"
+							type="file"
+							placeholder="Image"
+							className="input"
+							onChange={convertToBase64}
 						/>
 						{error && <div className="error_msg">{error}</div>}
 						<button type="submit" className="green_btn">
