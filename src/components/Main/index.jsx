@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom'
+import { BsFillTelephoneFill, BsLinkedin, BsEnvelope, BsFileEarmarkPdf } from "react-icons/bs";
 
 const Main = () => {
 	const handleLogout = () => {
@@ -38,51 +39,38 @@ const Main = () => {
 					Logout
 				</button>
 			</nav>
-			<div>
-				<Container className="box">
+			<div className="upc">
+				<div className="gradient"></div>
+				<div className="profile-down">
+					<img src={data.image}/>
+					<div className="profile-title">{data.name}</div>
+					<div className="profile-description">
+						<BsFillTelephoneFill /> {data.phoneNo}
+						<br/>
+						<BsEnvelope/> {data.email}
+						<br/>
+						<BsLinkedin /> <a href={data.linkedIn} target="_blank">{data.linkedIn}</a>
+						<br/>
+						<BsFileEarmarkPdf/> <Link to={data.resume} target="_blank">{data.resume}</Link>
+						<br/><br/>
+						{data.Bio}
+					</div>
+					<div className="profile-button"><a className="connection-link" href={'/connections'}>Connections</a></div>
+				</div>
+				{/* <Container className="box">
 					<img width={200} height={200} src={data.image}/>
-					<hr/>
-					<Row>
-						<Col sm={4} className="row_title">Name:</Col>
-						<Col sm={8}>{data.name}</Col>
-					</Row>
-					<hr/>
-					<Row>
-						<Col sm={4} className="row_title">Phone No:</Col>
-						<Col sm={8}>{data.phoneNo}</Col>
-					</Row>
-					<hr/>
-					<Row>
-						<Col sm={4} className="row_title">Email:</Col>
-						<Col sm={8}>{data.email}</Col>
-					</Row>
-					<hr/>
-					<Row>
-						<Col sm={4} className="row_title">LinkedIn Link:</Col>
-						<Col sm={8}><a href={data.linkedIn} target="_blank">{data.linkedIn}</a></Col>
-					</Row>
-					<hr/>
-					<Row>
-						<Col sm={4} className="row_title">Bio:</Col>
-						<Col sm={8}>{data.Bio}</Col>
-					</Row>
-					<hr/>
-					<Row>
-						<Col sm={4} className="row_title">Resume Link:</Col>
-						<Col sm={8}><Link to={data.resume} target="_blank">{data.resume}</Link></Col>
-					</Row>
-					<hr/>
-					<Row>
-						<Col sm={4} className="row_title">User ID:</Col>
-						<Col sm={8}>{data.user_id}</Col>
-					</Row>
-					<hr/>
-					<Row>
-						<Col sm={4} className="row_title">My Connections:</Col>
-						<Col sm={8}><Link to={'/connections'}>Click Here to see people you interacted with.</Link></Col>
-					</Row>
-					<hr/>
-				</Container>
+					<h1>{data.name}</h1>
+					<BsFillTelephoneFill /> {data.phoneNo}
+					<br></br>
+					<BsEnvelope/> {data.email}
+					<br/>
+					<BsLinkedin /> <a href={data.linkedIn} target="_blank">{data.linkedIn}</a>
+					<br/>
+					<BsFileEarmarkPdf/> <Link to={data.resume} target="_blank">{data.resume}</Link>
+					<br/>
+					<h3>{data.Bio}</h3>
+					<Link to={'/connections'}>Click Here to see people you interacted with.</Link>
+				</Container> */}
 			</div>
 		</div>
 	);

@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { BsFillTelephoneFill, BsLinkedin, BsEnvelope, BsFileEarmarkPdf } from "react-icons/bs";
 
 const Connection = () => {
     
@@ -74,47 +74,66 @@ const Connection = () => {
 					Logout
 				</button>
 			</nav>
-            <div>
+            <div className='float'>
                 {connections.map(connection => (
-                    <Container className="box">
-                        <img width={200} height={200} src={connection.image}/>
-					    <hr/>
-                        <Row>
-                            <Col sm={4} className="row_title">Name:</Col>
-                            <Col sm={8}>{connection.name}</Col>
-                        </Row>
-                        <hr/>
-                        <Row>
-                            <Col sm={4} className="row_title">Phone No:</Col>
-                            <Col sm={8}>{connection.phoneNo}</Col>
-                        </Row>
-                        <hr/>
-                        <Row>
-                            <Col sm={4} className="row_title">Email:</Col>
-                            <Col sm={8}>{connection.email}</Col>
-                        </Row>
-                        <hr/>
-                        <Row>
-                            <Col sm={4} className="row_title">LinkedIn Link:</Col>
-                            <Col sm={8}>{connection.linkedIn}</Col>
-                        </Row>
-                        <hr/>
-                        <Row>
-                            <Col sm={4} className="row_title">Bio:</Col>
-                            <Col sm={8}>{connection.Bio}</Col>
-                        </Row>
-                        <hr/>
-                        <Row>
-                            <Col sm={4} className="row_title">Resume Link:</Col>
-                            <Col sm={8}>{connection.resume}</Col>
-                        </Row>
-                        <hr/>
-                        <Row>
-                            <Col sm={4} className="row_title">Connected On:</Col>
-                            <Col sm={8}>{connection.connected_at}</Col>
-                        </Row>
-                        <hr/>
-                    </Container>
+                    <div className="upc">
+                        <div className="gradient"></div>
+                        <div className="profile-down">
+                            <img src={connection.image}/>
+                            <div className="profile-title">{connection.name}</div>
+                            <div className="profile-description">
+                                <BsFillTelephoneFill /> {connection.phoneNo}
+                                <br/>
+                                <BsEnvelope/> {connection.email}
+                                <br/>
+                                <BsLinkedin /> <a href={connection.linkedIn} target="_blank">{connection.linkedIn}</a>
+                                <br/>
+                                <BsFileEarmarkPdf/> <Link to={connection.resume} target="_blank">{connection.resume}</Link>
+                                <br/><br/>
+                                {connection.Bio}
+                            </div>
+                            <div className="connection-date">Connected On: {connection.connected_at}</div>
+                        </div>
+                    </div>
+                    // <Container className="box">
+                    //     <img width={200} height={200} src={connection.image}/>
+					//     <hr/>
+                    //     <Row>
+                    //         <Col sm={4} className="row_title">Name:</Col>
+                    //         <Col sm={8}>{connection.name}</Col>
+                    //     </Row>
+                    //     <hr/>
+                    //     <Row>
+                    //         <Col sm={4} className="row_title">Phone No:</Col>
+                    //         <Col sm={8}>{connection.phoneNo}</Col>
+                    //     </Row>
+                    //     <hr/>
+                    //     <Row>
+                    //         <Col sm={4} className="row_title">Email:</Col>
+                    //         <Col sm={8}>{connection.email}</Col>
+                    //     </Row>
+                    //     <hr/>
+                    //     <Row>
+                    //         <Col sm={4} className="row_title">LinkedIn Link:</Col>
+                    //         <Col sm={8}>{connection.linkedIn}</Col>
+                    //     </Row>
+                    //     <hr/>
+                    //     <Row>
+                    //         <Col sm={4} className="row_title">Bio:</Col>
+                    //         <Col sm={8}>{connection.Bio}</Col>
+                    //     </Row>
+                    //     <hr/>
+                    //     <Row>
+                    //         <Col sm={4} className="row_title">Resume Link:</Col>
+                    //         <Col sm={8}>{connection.resume}</Col>
+                    //     </Row>
+                    //     <hr/>
+                    //     <Row>
+                    //         <Col sm={4} className="row_title">Connected On:</Col>
+                    //         <Col sm={8}>{connection.connected_at}</Col>
+                    //     </Row>
+                    //     <hr/>
+                    // </Container>
                 ))}
             </div>
 		</div>
